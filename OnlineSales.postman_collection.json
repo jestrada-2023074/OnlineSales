@@ -1,0 +1,974 @@
+{
+	"info": {
+		"_postman_id": "c9d63cdf-9328-454f-8157-6f1933662b20",
+		"name": "OnlineSales",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37956963"
+	},
+	"item": [
+		{
+			"name": "CRUDCategoria",
+			"item": [
+				{
+					"name": "DeleteCategoria",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjliY2ZjNDU2ZGM3MTgwNGZlN2MiLCJ1c2VybmFtZSI6Imtqb2FzZGpvYXMiLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzAwNzAsImV4cCI6MTczOTU4MDg3MH0.fH3zaj7gDJzjlJwsG5tUnf3GTKseGVJ_eLGWUAYGDJg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/v2/categoria/67afca61811370e0e4f004ed",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"categoria",
+								"67afca61811370e0e4f004ed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllCategoria",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:2636/v2/categoria",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"categoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SaveCategoria",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Limpieza",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Productos de limpieza ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/v2/categoria",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"categoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByIDCategoria",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjliY2ZjNDU2ZGM3MTgwNGZlN2MiLCJ1c2VybmFtZSI6Imtqb2FzZGpvYXMiLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzAwNzAsImV4cCI6MTczOTU4MDg3MH0.fH3zaj7gDJzjlJwsG5tUnf3GTKseGVJ_eLGWUAYGDJg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/v2/categoria/67afca61811370e0e4f004ed",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"categoria",
+								"67afca61811370e0e4f004ed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCategoria",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjliY2ZjNDU2ZGM3MTgwNGZlN2MiLCJ1c2VybmFtZSI6Imtqb2FzZGpvYXMiLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzAwNzAsImV4cCI6MTczOTU4MDg3MH0.fH3zaj7gDJzjlJwsG5tUnf3GTKseGVJ_eLGWUAYGDJg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Limpieza",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Productos de limpieza de hogar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/v2/categoria/67afca61811370e0e4f004ed",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"categoria",
+								"67afca61811370e0e4f004ed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUDProductos",
+			"item": [
+				{
+					"name": "GetAllProductos",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjliY2ZjNDU2ZGM3MTgwNGZlN2MiLCJ1c2VybmFtZSI6Imtqb2FzZGpvYXMiLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzAwNzAsImV4cCI6MTczOTU4MDg3MH0.fH3zaj7gDJzjlJwsG5tUnf3GTKseGVJ_eLGWUAYGDJg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/v2/productos",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductosByID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjliY2ZjNDU2ZGM3MTgwNGZlN2MiLCJ1c2VybmFtZSI6Imtqb2FzZGpvYXMiLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzAwNzAsImV4cCI6MTczOTU4MDg3MH0.fH3zaj7gDJzjlJwsG5tUnf3GTKseGVJ_eLGWUAYGDJg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/v2/productos/67af9e9545832e41a21566f2",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"productos",
+								"67af9e9545832e41a21566f2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProduct",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjliY2ZjNDU2ZGM3MTgwNGZlN2MiLCJ1c2VybmFtZSI6Imtqb2FzZGpvYXMiLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzAwNzAsImV4cCI6MTczOTU4MDg3MH0.fH3zaj7gDJzjlJwsG5tUnf3GTKseGVJ_eLGWUAYGDJg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/v2/productos/67afcecab9a639837154506b",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"productos",
+								"67afcecab9a639837154506b"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SaveProduct",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjliY2ZjNDU2ZGM3MTgwNGZlN2MiLCJ1c2VybmFtZSI6Imtqb2FzZGpvYXMiLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzAwNzAsImV4cCI6MTczOTU4MDg3MH0.fH3zaj7gDJzjlJwsG5tUnf3GTKseGVJ_eLGWUAYGDJg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Mueble",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Mueble madera",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "Q.1500.00",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "categoria",
+									"value": "67afc320e0f17795559325f7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/v2/productos",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjliY2ZjNDU2ZGM3MTgwNGZlN2MiLCJ1c2VybmFtZSI6Imtqb2FzZGpvYXMiLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzAwNzAsImV4cCI6MTczOTU4MDg3MH0.fH3zaj7gDJzjlJwsG5tUnf3GTKseGVJ_eLGWUAYGDJg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Cerave",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Limpiador facial",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "Q.185.00",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "categoria",
+									"value": "67af9b2350324a111edace5f",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/v2/productos/67afce9ab9a6398371545067",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"productos",
+								"67afce9ab9a6398371545067"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUDUser",
+			"item": [
+				{
+					"name": "RegisterUser",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Jose",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Estrada",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "KJOASDJOAS",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "AJSSAJA@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12SpiderM@n34",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "36963698",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/v2/usuarios/register",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IniciarSesion",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "r",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userLoggin",
+									"value": "chewe07",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12SpiderM@n34",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/v2/usuarios/login",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerUserbyID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYzdmMmUwZjE3Nzk1NTU5MzI1ZmQiLCJ1c2VybmFtZSI6ImNoZXdlMDciLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzMyNDMsImV4cCI6MTczOTU4NDA0M30.P3byXruNZT2_1_2157KEwfzv0GOglPqQEJYJ7E7gWz0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/v2/usuarios/67afb9bcfc456dc71804fe7c",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios",
+								"67afb9bcfc456dc71804fe7c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerTodosUsers",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYjliY2ZjNDU2ZGM3MTgwNGZlN2MiLCJ1c2VybmFtZSI6Imtqb2FzZGpvYXMiLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzAwNzAsImV4cCI6MTczOTU4MDg3MH0.fH3zaj7gDJzjlJwsG5tUnf3GTKseGVJ_eLGWUAYGDJg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/v2/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatepasword",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYzdmMmUwZjE3Nzk1NTU5MzI1ZmQiLCJ1c2VybmFtZSI6ImNoZXdlMDciLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzMyNDMsImV4cCI6MTczOTU4NDA0M30.P3byXruNZT2_1_2157KEwfzv0GOglPqQEJYJ7E7gWz0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "oldPassword",
+									"value": "12SpiderM@n34",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "12SpiderM@n34.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/v2/usuarios/password/67afc7f2e0f17795559325fd",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios",
+								"password",
+								"67afc7f2e0f17795559325fd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYzI2OGUwZjE3Nzk1NTU5MzI1ZjIiLCJ1c2VybmFtZSI6ImNoZXdlIiwibmFtZSI6Ikpvc2UiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzM5NTcxODMwLCJleHAiOjE3Mzk1ODI2MzB9.kfthTH5sA1NYVUugy0RoHp5GhpK0u6f8icKfykbbMkE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/v2/usuarios/67afc268e0f17795559325f2",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios",
+								"67afc268e0f17795559325f2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYzdmMmUwZjE3Nzk1NTU5MzI1ZmQiLCJ1c2VybmFtZSI6ImNoZXdlMDciLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzMyNDMsImV4cCI6MTczOTU4NDA0M30.P3byXruNZT2_1_2157KEwfzv0GOglPqQEJYJ7E7gWz0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "sadsa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "surname",
+									"value": "ksa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "chewe2007@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/v2/usuarios/67afc7f2e0f17795559325fd",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios",
+								"67afc7f2e0f17795559325fd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUDUserAdmin",
+			"item": [
+				{
+					"name": "RegisterUser",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Jose",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Estrada",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "KJOASDJOAS",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "AJSSAJA@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12SpiderM@n34",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "36963698",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/v2/usuarios/register",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IniciarSesion",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "r",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userLoggin",
+									"value": "chewe07",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12SpiderM@n34",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/v2/usuarios/login",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerUserbyID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYzdmMmUwZjE3Nzk1NTU5MzI1ZmQiLCJ1c2VybmFtZSI6ImNoZXdlMDciLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzMyNDMsImV4cCI6MTczOTU4NDA0M30.P3byXruNZT2_1_2157KEwfzv0GOglPqQEJYJ7E7gWz0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/v2/usuarios/67afcbbdb9a6398371545046",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios",
+								"67afcbbdb9a6398371545046"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerTodosUsers",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmY2JiZGI5YTYzOTgzNzE1NDUwNDYiLCJ1c2VybmFtZSI6InBhcm1hcyIsIm5hbWUiOiJQZWRybyIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTczOTU3NDI0NiwiZXhwIjoxNzM5NTg1MDQ2fQ.LpKdufPDmsPyExUu37DF0XCTWa2Uu3biSz-hGDzPLzk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/v2/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatepasword",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYzdmMmUwZjE3Nzk1NTU5MzI1ZmQiLCJ1c2VybmFtZSI6ImNoZXdlMDciLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzMyNDMsImV4cCI6MTczOTU4NDA0M30.P3byXruNZT2_1_2157KEwfzv0GOglPqQEJYJ7E7gWz0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "oldPassword",
+									"value": "12SpiderM@n34",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "12SpiderM@n34.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/v2/usuarios/password/67afcbbdb9a6398371545046",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios",
+								"password",
+								"67afcbbdb9a6398371545046"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYzI2OGUwZjE3Nzk1NTU5MzI1ZjIiLCJ1c2VybmFtZSI6ImNoZXdlIiwibmFtZSI6Ikpvc2UiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzM5NTcxODMwLCJleHAiOjE3Mzk1ODI2MzB9.kfthTH5sA1NYVUugy0RoHp5GhpK0u6f8icKfykbbMkE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/v2/usuarios/67afcc61b9a639837154504e",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios",
+								"67afcc61b9a639837154504e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FmYzdmMmUwZjE3Nzk1NTU5MzI1ZmQiLCJ1c2VybmFtZSI6ImNoZXdlMDciLCJuYW1lIjoiSm9zZSIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE3Mzk1NzMyNDMsImV4cCI6MTczOTU4NDA0M30.P3byXruNZT2_1_2157KEwfzv0GOglPqQEJYJ7E7gWz0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "sadsa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "surname",
+									"value": "ksa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "parmas@kinal.edu.gt",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2636/v2/usuarios/67afcbbdb9a6398371545046",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v2",
+								"usuarios",
+								"67afcbbdb9a6398371545046"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

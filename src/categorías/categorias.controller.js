@@ -113,17 +113,29 @@ export const updateCategoria = async (req, res) => {
 export const deleteCategoria = async (req, res) => {
     try {
         const { id } = req.params;
-        const deletedCategoria = await Categoria.findByIdAndDelete(id);
 
-        if (!deletedCategoria) {
+        // Buscar la categoría predeterminada (por ejemplo, "Sin categoría")
+        const categoriaPredeterminada = await Categoria.findOne({ nombre: 'Sin categoría' });
+
+        if (!categoriaPredeterminada) {
             return res.status(404).send({
                 success: false,
-                message: 'Category not found'
+                message: 'Default category not found'
             });
         }
+
+        // Transferir productos a la categoría predeterminada
+        await Productos.updateMany(
+            { categoria: id },
+            { categoria: categoriaPredeterminada._id }
+        );
+
+        // Eliminar la categoría
+        await Categoria.findByIdAndDelete(id);
+
         return res.send({
             success: true,
-            message: 'Category removed successfully'
+            message: 'Category deleted successfully'
         });
     } catch (err) {
         console.error('General error', err);

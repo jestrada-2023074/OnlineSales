@@ -6,17 +6,17 @@ import {
     deleteCategoria,
     updateCategoria
 } from './categorias.controller.js'
-import { validateJwt } from '../../middlewares/validate.jwt.js'
-
+import { validateJwt, isAdmin } from '../../middlewares/validate.jwt.js'
+import { categoriaValidator} from '../../middlewares/validators.js'
 
 const api = Router()
 
 
-api.get('/',[validateJwt], getAllCategorias)
-api.post('/',[validateJwt], createCategoria)
-api.get('/:id',[validateJwt], getCategoriaById)
-api.delete('/:id',[validateJwt], deleteCategoria)
-api.put('/:id',[validateJwt], updateCategoria)
+api.get('/', getAllCategorias)
+api.post('/',[validateJwt, isAdmin], categoriaValidator, createCategoria)
+api.get('/:id',[validateJwt, isAdmin], getCategoriaById)
+api.delete('/:id',[validateJwt, isAdmin], deleteCategoria)
+api.put('/:id',[validateJwt, isAdmin],categoriaValidator, updateCategoria)
 
 
 export default api

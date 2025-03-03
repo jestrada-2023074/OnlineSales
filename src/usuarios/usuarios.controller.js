@@ -115,31 +115,53 @@ export const update = async (req, res) => {
 //Eliminar User
 export const deleteUser = async (req, res) => {
     try {
-        let { id } = req.params
+        const { id } = req.params;
+        const { uid, role } = req.user; // uid y role del usuario autenticado (obtenidos del token)
 
-        let user = await User.findByIdAndDelete(id)
-        if (!user) return res.status(404).send(
-            {
-                succes: false,
+        // Buscar el usuario a eliminar
+        const userToDelete = await User.findById(id);
+        if (!userToDelete) {
+            return res.status(404).send({
+                success: false,
                 message: 'User not found'
+            });
+        }
+
+        // Verificar permisos
+        if (role === 'ADMIN') {
+            // Si es administrador, solo puede eliminar clientes (no otros admins)
+            if (userToDelete.role === 'ADMIN') {
+                return res.status(403).send({
+                    success: false,
+                    message: 'Admins cannot delete other admins'
+                });
             }
-        )
-        return res.send(
-            {
-                succes: true,
-                message: 'User removed with exit =0: ',
+        } else {
+            // Si no es administrador, solo puede eliminar su propia cuenta
+            if (userToDelete._id.toString() !== uid) {
+                return res.status(403).send({
+                    success: false,
+                    message: 'You can only delete your own account'
+                });
             }
-        )
+        }
+
+        // Eliminar el usuario
+        await User.findByIdAndDelete(id);
+
+        return res.send({
+            success: true,
+            message: 'User removed successfully'
+        });
     } catch (err) {
-        console.error('General error', err)
-        return res.status(500).send(
-            {
-                succes: false,
-                message: 'General error', err
-            }
-        )
+        console.error('General error', err);
+        return res.status(500).send({
+            success: false,
+            message: 'General error',
+            err
+        });
     }
-}
+};
 
 export const updatePassword = async (req, res) => {
     try {
@@ -190,6 +212,8 @@ export const register = async (req, res) => {
     try {
         //Capturar los datos
         let data = req.body
+        //Forzamos arol cliente
+        data.role = 'CLIENT'
         //Crear el el objeto del modelo agregandole los datos capturados
         let user = new User(data)
         //Encriptar la password

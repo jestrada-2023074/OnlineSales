@@ -21,3 +21,9 @@ export const validateJwt = async(req, res, next)=>{
         return res.status(401).send({message: 'Invalid credentials'})
     }
 }
+export const isAdmin = (req, res, next) => {
+    if (req.user.role !== "ADMIN") {
+        return res.status(403).json({ message: "Access Forbidden: Admins only" });
+    }
+    next()
+}

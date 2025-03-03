@@ -9,11 +9,6 @@ const userSchema = Schema(
             required: [true, 'Name is required'],
             maxLength: [25, `Can't be overcome 25 characters`]
         },
-        name: {
-            type: String,
-            required: [true, 'Name is required'],
-            maxLength: [25, `Can't be overcome 25 characters`]
-        },
         surname: {
             type: String,
             required: [true, 'Surname is required'],
@@ -29,6 +24,7 @@ const userSchema = Schema(
         email: {
             type: String,
             unique: true,
+            lowercase: true,
             required: [true, 'Email is required'],
         },
         password: {
@@ -41,14 +37,14 @@ const userSchema = Schema(
         phone: {
             type: String,
             required: [true, 'Phone is required'],
-            minLength: [8, `Can't be overcome 16 characters`],
+            minLength: [8, `Can't be overcome 8 characters`],
             maxLength: [15, 'Phone must be 15 numbers'],
         },
         role: {
             type: String,
-            required: [true, 'Role is required'],
             uppercase: true,
-            enum: ['ADMIN', 'CLIENT']
+            enum: ['ADMIN', 'CLIENT'],
+            default:'CLIENT'
         }
     }
 )

@@ -233,6 +233,34 @@
 					"response": []
 				},
 				{
+					"name": "TopProduc",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2ODM1ZDkxNzYwYjM0ZDAyMGM1YjkiLCJ1c2VybmFtZSI6ImNoZXdlIiwibmFtZSI6Ikpvc2UiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NDEwNjQ3NTksImV4cCI6MTc0MTA3NTU1OX0.voMLI_YThciq_t_eVLdSmoMFWin0aMlhh3GK2ylgMac",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:2636/productos/TopProduct",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"productos",
+								"TopProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GetProductosByID",
 					"request": {
 						"auth": {

@@ -24,7 +24,6 @@ const facturaSchema = Schema({
         },
         precio: {
             type: Number,
-            required: true,
             min: 0
         }
     }],

@@ -69,7 +69,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NzI5Yzk2YzRjMjczMmE3YjAxYzkiLCJ1c2VybmFtZSI6ImNoZXdlIiwibmFtZSI6Ikpvc2UiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NDEwNTg3MjYsImV4cCI6MTc0MTA2OTUyNn0.57H4Jh3YBjWcLxIuHKs3BmdlM6w0SAcu32aFcxLHH-4",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2ODM1ZDkxNzYwYjM0ZDAyMGM1YjkiLCJ1c2VybmFtZSI6ImNoZXdlIiwibmFtZSI6Ikpvc2UiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NDEwNjMwMTEsImV4cCI6MTc0MTA3MzgxMX0.XNT0km25p5wXQ_FnrD8_19w_R2ErhtOJtQdFmiWdvLE",
 								"type": "text"
 							}
 						],
@@ -819,13 +819,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NzI5Yzk2YzRjMjczMmE3YjAxYzkiLCJ1c2VybmFtZSI6ImNoZXdlIiwibmFtZSI6Ikpvc2UiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NDEwNTg3MjYsImV4cCI6MTc0MTA2OTUyNn0.57H4Jh3YBjWcLxIuHKs3BmdlM6w0SAcu32aFcxLHH-4",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2ODM1ZDkxNzYwYjM0ZDAyMGM1YjkiLCJ1c2VybmFtZSI6ImNoZXdlIiwibmFtZSI6Ikpvc2UiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NDEwNjMwMTEsImV4cCI6MTc0MTA3MzgxMX0.XNT0km25p5wXQ_FnrD8_19w_R2ErhtOJtQdFmiWdvLE",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"producto\": \"67c6736496c4c2732a7b01d5\",  \r\n    \"cantidad\": 2  \r\n}",
+							"raw": "{\r\n    \"producto\": \"67c6839d91760b34d020c5bf\",  \r\n    \"cantidad\": 2  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -938,13 +938,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NzQyZjk2YzRjMjczMmE3YjAxZTgiLCJ1c2VybmFtZSI6ImNoZXdlMDc3IiwibmFtZSI6Ikpvc2UiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzQxMDU5MTI5LCJleHAiOjE3NDEwNjk5Mjl9.ng6omAYk9Re1eEawIaFiVAFaEpEpv5euyjrrcMR6uiI",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2ODM1ZDkxNzYwYjM0ZDAyMGM1YjkiLCJ1c2VybmFtZSI6ImNoZXdlIiwibmFtZSI6Ikpvc2UiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NDEwNjMwMTEsImV4cCI6MTc0MTA3MzgxMX0.XNT0km25p5wXQ_FnrD8_19w_R2ErhtOJtQdFmiWdvLE",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"producto\": \"67c6736496c4c2732a7b01d5\",  \r\n    \"cantidad\": 4  \r\n}",
+							"raw": "{\r\n    \"producto\": \"67c6839d91760b34d020c5bf\",  \r\n    \"cantidad\": 4  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1056,13 +1056,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MGRjMTc2NjllNWNiMzhjNzc5MTUiLCJ1c2VybmFtZSI6ImNoZXdlIiwibmFtZSI6Ikpvc2UiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzQxMDMyOTI1LCJleHAiOjE3NDEwNDM3MjV9.BCrExGfogZcMDVbQj-y_Q1NcNPdsJhaou15g18hVTkU",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2ODM1ZDkxNzYwYjM0ZDAyMGM1YjkiLCJ1c2VybmFtZSI6ImNoZXdlIiwibmFtZSI6Ikpvc2UiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NDEwNjMwMTEsImV4cCI6MTc0MTA3MzgxMX0.XNT0km25p5wXQ_FnrD8_19w_R2ErhtOJtQdFmiWdvLE",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"estado\": \"cancelada\"\r\n}",
+							"raw": "{\r\n    \"estado\": \"cancelada\",\r\n    \"productos\": [\r\n        {\r\n            \"producto\": \"67c6839d91760b34d020c5bf\",\r\n            \"cantidad\": 1\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1070,7 +1070,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:2636/factura/facturas/67c6172ec6d42666bd97ff6a",
+							"raw": "localhost:2636/factura/facturas/67c6842a91760b34d020c5cc",
 							"host": [
 								"localhost"
 							],
@@ -1078,7 +1078,7 @@
 							"path": [
 								"factura",
 								"facturas",
-								"67c6172ec6d42666bd97ff6a"
+								"67c6842a91760b34d020c5cc"
 							]
 						}
 					},

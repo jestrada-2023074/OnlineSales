@@ -1,20 +1,20 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema, model} from "mongoose"
 
-const facturaSchema = new mongoose.Schema({
+const facturaSchema = Schema({
     usuario: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User', // Referencia al modelo de usuario
+        ref: 'User', 
         required: true
     },
     compra: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Compra', // Referencia al modelo de compras
+        ref: 'Compra', 
         required: true
     },
     productos: [{
         producto: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Productos', // Referencia al modelo de productos
+            ref: 'Productos',
             required: true
         },
         cantidad: {
@@ -42,6 +42,7 @@ const facturaSchema = new mongoose.Schema({
         enum: ['pendiente', 'completada', 'cancelada'],
         default: 'pendiente'
     }
-});
+})
 
-export default mongoose.model('Factura', facturaSchema);
+export default model('Factura', facturaSchema)
+

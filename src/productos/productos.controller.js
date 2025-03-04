@@ -6,7 +6,7 @@ export const getAllProductos = async (req, res) => {
     try {
         const { limit = 20, skip = 0 } = req.query
         const productos = await Productos.find()
-            .populate("categoria") // Poblar la referencia a la categoría
+            .populate("categoria") 
             .skip(Number(skip))
             .limit(Number(limit))
 
@@ -26,6 +26,51 @@ export const getAllProductos = async (req, res) => {
         return res.status(500).send({
             success: false,
             message: 'General error',
+            err
+        })
+    }
+}
+
+// Obtener productos agotados o con stock bajo
+export const getLowStockProductos = async (req, res) => {
+    try {
+        const { minStock = 5 } = req.query 
+        const productos = await Productos.find({ stock: { $lt: minStock } }).populate("categoria")
+
+        return res.send({
+            success: true,
+            message: "Low stock products:",
+            productos
+        })
+    } catch (err) {
+        console.error("General error", err)
+        return res.status(500).send({
+            success: false,
+            message: "General error",
+            err
+        })
+    }
+}
+
+// Obtener los productos más vendidos
+export const getTopProductos = async (req, res) => {
+    try {
+        const { limit = 10 } = req.query;
+        const productos = await Productos.find()
+            .sort({ ventas: -1 }) 
+            .limit(Number(limit))
+            .populate("categoria")
+
+        return res.send({
+            success: true,
+            message: "Top-selling products:",
+            productos
+        })
+    } catch (err) {
+        console.error("General error", err);
+        return res.status(500).send({
+            success: false,
+            message: "General error",
             err
         })
     }
@@ -69,42 +114,42 @@ export const createProducto = async (req, res) => {
             return res.status(404).send({
                 success: false,
                 message: 'Category not found'
-            });
+            })
         }
 
         // Crear el producto
-        const producto = new Productos(data);
-        await producto.save();
+        const producto = new Productos(data)
+        await producto.save()
 
         return res.send({
             success: true,
             message: 'Product created successfully',
             producto
-        });
+        })
     } catch (err) {
         console.error('General error', err);
         return res.status(500).send({
             success: false,
             message: 'General error',
             err
-        });
+        })
     }
-};
+}
 
 // Actualizar un producto
 export const updateProducto = async (req, res) => {
     try {
-        const { id } = req.params;
-        const data = req.body;
+        const { id } = req.params
+        const data = req.body
 
         // Validar que la categoría exista (si se proporciona en la actualización)
         if (data.categoria) {
-            const categoriaExistente = await Categoria.findById(data.categoria);
+            const categoriaExistente = await Categoria.findById(data.categoria)
             if (!categoriaExistente) {
                 return res.status(404).send({
                     success: false,
                     message: 'Category not found'
-                });
+                })
             }
         }
 
@@ -113,29 +158,29 @@ export const updateProducto = async (req, res) => {
             id,
             data,
             { new: true }
-        ).populate("categoria");
+        ).populate("categoria")
 
         if (!updatedProducto) {
             return res.status(404).send({
                 success: false,
                 message: 'Product not found and not updated'
-            });
+            })
         }
 
         return res.send({
             success: true,
             message: 'Product updated successfully',
             producto: updatedProducto
-        });
+        })
     } catch (err) {
         console.error('General error', err);
         return res.status(500).send({
             success: false,
             message: 'General error',
             err
-        });
+        })
     }
-};
+}
 
 // Eliminar un producto
 export const deleteProducto = async (req, res) => {

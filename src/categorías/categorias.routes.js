@@ -7,7 +7,7 @@ import {
     updateCategoria
 } from './categorias.controller.js'
 import { validateJwt, isAdmin } from '../../middlewares/validate.jwt.js'
-import { categoriaValidator} from '../../middlewares/validators.js'
+import { categoriaValidator } from '../../middlewares/validators.js'
 
 const api = Router()
 

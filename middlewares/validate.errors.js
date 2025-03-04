@@ -1,5 +1,5 @@
 //Validar los errores del middleware
-import { validationResult } from "express-validator";
+import { validationResult } from "express-validator"
 
 export const validateErrores = (req, res, next)=>{
     const errors = validationResult(req)

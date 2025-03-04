@@ -1,11 +1,10 @@
-import { Router } from 'express';
-import { registerAdmin } from './admin.controller.js';
-import { adminValidator } from '../../middlewares/validators.js'; // Asegúrate de que la ruta sea correcta
-import { validateErrores } from '../../middlewares/validate.errors.js'; // Middleware para manejar errores de validación
+import { Router } from 'express'
+import { registerAdmin } from './admin.controller.js'
+import { adminValidator } from '../../middlewares/validators.js'
+import { validateErrores } from '../../middlewares/validate.errors.js'
 
-const api = Router();
+const api = Router()
 
-// Ruta para registrar un administrador
-api.post('/register', registerAdmin);
+api.post('/register', adminValidator, validateErrores, registerAdmin)
 
 export default api;

@@ -9,7 +9,7 @@ export const agregarAlCarrito = async (req, res) => {
     if (!productoEncontrado) {
         return res.status(404).send({ success: false, message: 'Producto no encontrado' })
     }
-    const compra = await Compra.findOne({ usuario: uid, estado: 'pendiente' })
+    let compra = await Compra.findOne({ usuario: uid, estado: 'pendiente' })
     if (!compra) {
         compra = new Compra({ usuario: uid, productos: [], total: 0 })
     }
@@ -35,7 +35,7 @@ export const completarCompra = async (req, res) => {
         return res.status(400).send({ success: false, message: 'El carrito está vacío' })
     }
 
-    compra.estado = 'completada';
+    compra.estado = 'completada'
     await compra.save()
 
     return res.send({ success: true, message: 'Compra completada', compra })

@@ -1,11 +1,12 @@
-import { body } from "express-validator";
-import { validateErrores } from "./validate.errors.js";
-import { existEmail, existUsername, notRequiredField } from "../utils/db.validators.js";
-import { validateErrorsWhitoutFiles } from "./validate.errors.js";
-import { existProduct } from "../utils/db.validators.js";
-import { existCompra } from "../utils/db.validators.js"; // Asegúrate de que la ruta sea correcta
-import { existUser  } from "../utils/db.validators.js";
-// Arreglo de validaciones para el registro
+import { body } from "express-validator"
+import { validateErrores } from "./validate.errors.js"
+import { existEmail, existUsername, notRequiredField } from "../utils/db.validators.js"
+import { validateErrorsWhitoutFiles } from "./validate.errors.js"
+import { existProduct } from "../utils/db.validators.js"
+import { existCompra } from "../utils/db.validators.js"
+import { existUser  } from "../utils/db.validators.js"
+import { existCategory } from "../utils/db.validators.js"
+//Validator de user
 export const registerValidator = [
     body('name', 'Name cannot be empty')
         .notEmpty()
@@ -34,9 +35,9 @@ export const registerValidator = [
         .isMobilePhone('any')
         .withMessage('Must be a valid phone number.'),
     validateErrores
-];
+]
 
-// Arreglo de validaciones para la actualización de usuario
+//Validator de user update
 export const updateUserValidator = [
     body('username')
         .optional()
@@ -66,20 +67,22 @@ export const updateUserValidator = [
         .withMessage('Role cannot be empty if provided.')
         .custom(notRequiredField),
     validateErrorsWhitoutFiles
-];
+]
+//Validator de categoria
 export const categoriaValidator = [
     body('name')
         .notEmpty()
         .withMessage('Name is required.')
         .isLength({ max: 25 })
-        .withMessage("Can't be more than 25 characters."),
+        .withMessage("Can't be more than 25 characters.")
+        .custom(existCategory),
     body('description')
         .notEmpty()
         .withMessage('Description is required.')
         .isLength({ max: 50 })
         .withMessage("Can't be more than 50 characters.")
-];
-
+]
+//Validator de compra
 export const compraValidator = [
     body('usuario')
         .notEmpty()
@@ -106,13 +109,14 @@ export const compraValidator = [
         .isNumeric()
         .withMessage('Total must be a number.')
         .custom((value, { req }) => {
-            const total = req.body.productos.reduce((acc, item) => acc + (item.cantidad * item.precio), 0);
+            const total = req.body.productos.reduce((acc, item) => acc + (item.cantidad * item.precio), 0)
             if (value !== total) {
-                throw new Error('Total must match the sum of the products.');
+                throw new Error('Total must match the sum of the products.')
             }
-            return true; // Si la validación pasa
+            return true
         })
-];
+]
+//Validator de productos
 export const productosValidator = [
     body('name')
         .notEmpty()
@@ -131,9 +135,9 @@ export const productosValidator = [
         .withMessage('Price must be a number.')
         .custom(value => {
             if (value < 0) {
-                throw new Error('Price must be a positive number.');
+                throw new Error('Price must be a positive number.')
             }
-            return true; // Si la validación pasa
+            return true
         }),
     body('stock')
         .notEmpty()
@@ -144,27 +148,28 @@ export const productosValidator = [
             if (value < 0) {
                 throw new Error('Stock cannot be negative.');
             }
-            return true; // Si la validación pasa
+            return true
         }),
     body('categoria')
-        .optional() // La categoría puede ser opcional si no se requiere al crear un producto
+        .optional()
         .isMongoId()
         .withMessage('Invalid category ID format.')
-];
+]
+//Validator de factura
 export const facturaValidator = [
     body('usuario')
         .notEmpty()
         .withMessage('User  ID is required.')
         .isMongoId()
         .withMessage('Invalid User ID format.')
-        .custom(existUser ), // Verificar que el usuario exista
+        .custom(existUser ), 
 
     body('compra')
         .notEmpty()
         .withMessage('Compra ID is required.')
         .isMongoId()
         .withMessage('Invalid Compra ID format.')
-        .custom(existCompra), // Verificar que la compra exista
+        .custom(existCompra), 
 
     body('productos')
         .isArray()
@@ -174,16 +179,16 @@ export const facturaValidator = [
         .custom((productos) => {
             productos.forEach(item => {
                 if (!item.producto || !item.cantidad || !item.precio) {
-                    throw new Error('Each product must have a product ID, quantity, and price.');
+                    throw new Error('Each product must have a product ID, quantity, and price.')
                 }
-            });
-            return true; // Si la validación pasa
+            })
+            return true
         })
         .custom(async (productos) => {
             for (const item of productos) {
-                await existProduct(item.producto); // Verificar que el producto exista
+                await existProduct(item.producto)
             }
-            return true; // Si la validación pasa
+            return true
         }),
 
     body('total')
@@ -195,14 +200,15 @@ export const facturaValidator = [
             if (value < 0) {
                 throw new Error('Total cannot be negative.');
             }
-            return true; // Si la validación pasa
+            return true
         }),
 
     body('estado')
         .optional()
         .isIn(['pendiente', 'completada', 'cancelada'])
         .withMessage('Estado must be either "pendiente", "completada", or "cancelada".')
-];
+]
+//Validator de admin
 export const adminValidator = [
     body('name')
         .notEmpty()
@@ -212,11 +218,11 @@ export const adminValidator = [
         .withMessage('Email is required.')
         .isEmail()
         .withMessage('Must be a valid email address.')
-        .custom(existEmail), // Verificar que el email no esté en uso
+        .custom(existEmail), 
     body('username')
         .notEmpty()
         .withMessage('Username is required.')
-        .custom(existUsername), // Verificar que el username no esté en uso
+        .custom(existUsername),
     body('password')
         .notEmpty()
         .withMessage('Password is required.')
@@ -224,5 +230,5 @@ export const adminValidator = [
         .withMessage('Password must be strong (at least 1 uppercase, 1 lowercase, 1 number, and 1 special character).'),
     body('secretPassword')
         .notEmpty()
-        .withMessage('Secret password is required.') // Asegúrate de que la contraseña secreta esté presente
-];
+        .withMessage('Secret password is required.') 
+]

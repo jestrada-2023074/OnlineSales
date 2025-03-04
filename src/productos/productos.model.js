@@ -6,7 +6,8 @@ const productosSchema = Schema(
         name:{
             type: String,
             required: [true, 'Name is required'],
-            maxLength: [25, `Can't be overcome 25 characteres`]
+            maxLength: [25, `Can't be overcome 25 characteres`],
+            unique: true
         },
         description:{
             type: String,

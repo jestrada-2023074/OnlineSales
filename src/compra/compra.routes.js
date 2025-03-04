@@ -1,4 +1,4 @@
-// routes.js
+//Rutas de compras
 import express from 'express'
 import { validateJwt } from '../../middlewares/validate.jwt.js'
 import { agregarAlCarrito, completarCompra, obtenerHistorialCompras } from './compra.controller.js'
